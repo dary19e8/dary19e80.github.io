@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#08091d">
+  <meta name="description" content="NEXORA: diseño web, diseño gráfico, catálogos y soluciones digitales para negocios y emprendedores en México.">
+  <title>NEXORA | Soluciones digitales</title>
+  <style>
+    :root{
+      --bg:#07091b;--panel:#101631;--panel2:#141d3b;--purple:#8b35ff;
+      --violet:#6025ef;--cyan:#12d4e8;--text:#f7f7ff;--muted:#bdc5e4;
+      --line:rgba(153,104,255,.55);--green:#20c96b;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,Segoe UI,Arial,sans-serif}
+    a{color:inherit;text-decoration:none}
+    .wrap{width:min(1180px,92%);margin:auto}
+    .top{position:sticky;top:0;z-index:10;background:rgba(7,9,27,.88);backdrop-filter:blur(16px);border-bottom:1px solid rgba(142,82,255,.22)}
+    .nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:900;letter-spacing:1px;font-size:25px}
+    .mark{width:43px;height:43px;display:grid;place-items:center;border-radius:13px;background:linear-gradient(135deg,#a855f7,#4f2bff);font-size:28px;font-weight:1000;box-shadow:0 0 28px #742cff77;transform:skew(-8deg)}
+    .brand small{display:block;font-size:9px;letter-spacing:3px;color:#b8bde0;font-weight:600;margin-top:1px}
+    .links{display:flex;gap:25px;color:#d8dcf4;font-size:14px}
+    .links a:hover{color:#b88cff}
+    .nav-cta,.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;border:0;border-radius:999px;padding:13px 21px;background:linear-gradient(100deg,#9b28ff,#5827ed);color:white;font-weight:750;box-shadow:0 8px 30px #702aff55;transition:.2s}
+    .nav-cta:hover,.btn:hover{transform:translateY(-2px);filter:brightness(1.12)}
+    .hero{position:relative;overflow:hidden;padding:82px 0 76px;background:radial-gradient(ellipse at 78% 48%,#24206c 0,transparent 36%),radial-gradient(ellipse at 15% 0%,#351080 0,transparent 34%),linear-gradient(120deg,#090b20,#080d25 65%,#10103b)}
+    .hero:before,.hero:after{content:"";position:absolute;width:360px;height:360px;border:1px solid #7939ff44;border-radius:50%;filter:blur(1px);pointer-events:none}
+    .hero:before{right:5%;top:3%;box-shadow:0 0 80px #742aff22,inset 0 0 70px #742aff22}
+    .hero:after{right:13%;top:15%;width:250px;height:250px;border-color:#15cce633}
+    .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:38px;position:relative;z-index:1}
+    .eyebrow{color:#b8a1ff;text-transform:uppercase;letter-spacing:3px;font-size:12px;font-weight:800}
+    h1{font-size:clamp(42px,6vw,72px);line-height:.99;letter-spacing:-2.5px;margin:17px 0}
+    .gradient{background:linear-gradient(90deg,#a45bff,#24d9e8);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .lead{font-size:18px;line-height:1.7;color:var(--muted);max-width:570px}
+    .hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px}
+    .btn.outline{background:transparent;border:1px solid #aab0d8;box-shadow:none}
+    .visual{min-height:330px;display:grid;place-items:center;position:relative}
+    .orbit{width:min(390px,90%);aspect-ratio:1;border-radius:50%;border:2px solid #7e3cff66;box-shadow:0 0 55px #6c35ff44,inset 0 0 55px #6c35ff22;display:grid;place-items:center;transform:rotate(-12deg)}
+    .screen{width:78%;height:58%;border:7px solid #9aa7d9;border-bottom-width:13px;border-radius:18px 18px 9px 9px;background:linear-gradient(145deg,#111a4c,#080b20);box-shadow:0 25px 45px #0009,0 0 35px #773aff66;transform:rotate(12deg);display:flex;align-items:center;justify-content:center;flex-direction:column}
+    .screen .big-n{font-size:90px;font-weight:1000;line-height:1;background:linear-gradient(135deg,#b75cff,#4929ff);-webkit-background-clip:text;color:transparent}
+    .screen strong{font-size:22px;letter-spacing:3px}
+    .laptop-base{position:absolute;bottom:20%;width:82%;height:17px;border-radius:4px 4px 25px 25px;background:linear-gradient(90deg,#5a5f9d,#d5d9f5,#52578e);transform:skewX(-18deg);box-shadow:0 18px 25px #0008}
+    .float{position:absolute;padding:13px 16px;border:1px solid #8951ff88;border-radius:15px;background:#17184acc;backdrop-filter:blur(8px);font-size:22px;box-shadow:0 8px 30px #0005}
+    .f1{top:13%;left:2%}.f2{right:1%;top:23%}.f3{bottom:13%;left:7%}
+    section{padding:76px 0}
+    .section-head{text-align:center;margin-bottom:34px}
+    .section-head h2{font-size:clamp(29px,4vw,42px);margin:0 0 10px}
+    .section-head p{color:var(--muted);margin:0}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{background:linear-gradient(145deg,#121a38,#0c1128);border:1px solid var(--line);border-radius:19px;padding:25px;box-shadow:0 10px 35px #0003;transition:.2s}
+    .card:hover{transform:translateY(-5px);border-color:#b56bff;box-shadow:0 15px 38px #6c2cff30}
+    .icon{width:52px;height:52px;border-radius:15px;display:grid;place-items:center;background:#5422a833;border:1px solid #9a55ff;color:#c9a7ff;font-size:25px;margin-bottom:18px}
+    .card h3{font-size:19px;margin:0 0 9px}
+    .card p{color:var(--muted);line-height:1.55;min-height:48px;margin:0 0 18px}
+    .price{font-size:21px;font-weight:850;margin:15px 0 18px;color:#fff}
+    .price small{font-size:12px;color:#b9c2e2;font-weight:500}
+    .card .btn{width:100%;padding:11px;font-size:14px}
+    .portfolio{background:linear-gradient(180deg,#0a0d22,#0d1230)}
+    .projects{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .project{border-radius:17px;overflow:hidden;background:#141c39;border:1px solid #343d72}
+    .project-art{height:160px;display:grid;place-items:center;font-size:40px;font-weight:900;letter-spacing:2px}
+    .art1{background:radial-gradient(circle at 70% 20%,#a94cff,#28126c 50%,#10132d)}
+    .art2{background:linear-gradient(135deg,#073b50,#0ca9b5)}
+    .art3{background:linear-gradient(135deg,#39206d,#111d4b)}
+    .project-info{padding:18px}.project-info p{color:var(--muted);font-size:14px;line-height:1.5;margin-bottom:0}
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center}
+    .about-box{padding:30px;border:1px solid #6642b8;border-radius:20px;background:linear-gradient(135deg,#17133c,#10182f)}
+    .about-box h3{font-size:26px;margin-top:0}.about-box p{color:var(--muted);line-height:1.7}
+    .checks{display:grid;gap:13px;color:#dce2ff}.checks span:before{content:"✓";color:#25d9c8;font-weight:900;margin-right:10px}
+    .login-section{padding:76px 0;background:linear-gradient(180deg,#0a0d22,#10102d)}
+    .login-card{max-width:510px;margin:auto;padding:32px;border:1px solid #8750ff;border-radius:22px;background:linear-gradient(145deg,#141b3b,#0c1029);box-shadow:0 15px 50px #0005}
+    .login-card h2{margin:0 0 8px;font-size:30px}.login-card .sub{color:var(--muted);line-height:1.5;margin:0 0 24px}
+    .login-field{display:grid;gap:8px;margin:16px 0}.login-field label{font-size:13px;color:#dce2ff;font-weight:700}
+    .login-field input{width:100%;padding:14px 15px;border:1px solid #49517e;border-radius:12px;background:#090f27;color:#fff;font:inherit;outline:none}
+    .login-field input:focus{border-color:#a45bff;box-shadow:0 0 0 3px #8b35ff25}
+    .password-wrap{position:relative}.password-wrap input{padding-right:78px}.show-pass{position:absolute;right:10px;top:50%;transform:translateY(-50%);border:0;background:transparent;color:#bca4ff;font-weight:700;cursor:pointer}
+    .login-submit{width:100%;cursor:pointer;margin-top:8px}.login-note{font-size:12px;line-height:1.5;color:#9fa8ca;margin:18px 0 0;text-align:center}
+    .login-status{display:none;padding:13px;border-radius:12px;margin-top:15px;background:#103d35;color:#9ff3d5;font-size:14px;line-height:1.5}
+    .login-status.show{display:block}.logout{display:none;margin:14px auto 0;background:transparent;border:1px solid #8b79c7;color:#e5dcff;padding:10px 18px;border-radius:99px;cursor:pointer}
+    .logout.show{display:block}
+    .contact{padding:58px 0;background:radial-gradient(ellipse at 15% 50%,#391078,#0a0d25 65%)}
+    .contact-box{display:flex;align-items:center;justify-content:space-between;gap:25px;padding:34px;border:1px solid #8750ff;border-radius:22px;background:#0c1029cc;box-shadow:0 0 45px #6a25ff22}
+    .contact-box h2{font-size:32px;margin:0 0 8px}.contact-box p{color:var(--muted);margin:0}
+    .whatsapp{background:var(--green);color:#062414;box-shadow:0 8px 28px #20c96b44}
+    footer{padding:26px 0;border-top:1px solid #272b50;color:#9fa8ca;font-size:13px}
+    .foot{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+    @media(max-width:850px){.links{display:none}.hero-grid{grid-template-columns:1fr}.visual{min-height:290px}.cards{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:580px){.nav{height:66px}.brand{font-size:21px}.nav-cta{padding:10px 13px;font-size:12px}.hero{padding:58px 0}.hero-grid{gap:10px}.visual{min-height:250px}.cards,.projects,.about-grid{grid-template-columns:1fr}.login-card{padding:24px}.card p{min-height:0}.contact-box{align-items:flex-start;flex-direction:column;padding:25px}.contact-box h2{font-size:27px}.foot{flex-direction:column}}
+  </style>
+</head>
+<body>
+  <div class="top">
+    <div class="wrap nav">
+      <a class="brand" href="#inicio"><span class="mark">N</span><span>NEXORA<small>CREA · DISEÑA · INNOVA</small></span></a>
+      <nav class="links">
+        <a href="#inicio">Inicio</a><a href="#servicios">Servicios</a><a href="#portafolio">Portafolio</a><a href="#nosotros">Nosotros</a><a href="#contacto">Contacto</a><a href="#login">Iniciar sesión</a>
+      </nav>
+      <a class="nav-cta wa-link" href="#" target="_blank" rel="noopener">Solicita un proyecto ↗</a>
+    </div>
+  </div>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="eyebrow">Estudio creativo digital</div>
+          <h1>NEXORA<br><span class="gradient">Transformamos tus ideas</span> en experiencias digitales.</h1>
+          <p class="lead">Diseñamos páginas web, creamos contenido visual y ofrecemos soluciones digitales para negocios, emprendedores y creadores.</p>
+          <div class="hero-actions">
+            <a class="btn" href="#servicios">✦ Nuestros servicios</a>
+            <a class="btn outline" href="#portafolio">Ver proyectos →</a>
+          </div>
+        </div>
+        <div class="visual" aria-label="Ilustración decorativa de una computadora">
+          <div class="orbit"><div class="screen"><div class="big-n">N</div><strong>NEXORA</strong></div></div>
+          <div class="laptop-base"></div>
+          <div class="float f1">⌘</div><div class="float f2">✧</div><div class="float f3">▤</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="servicios">
+      <div class="wrap">
+        <div class="section-head"><h2>Nuestros servicios</h2><p>Soluciones digitales a tu medida, con precios accesibles.</p></div>
+        <div class="cards">
+          <article class="card"><div class="icon">⌘</div><h3>Diseño web</h3><p>Páginas modernas y adaptables para negocios y empresas.</p><div class="price">$500–$1,200 <small>MXN</small></div><a class="btn wa-link" href="#" target="_blank" rel="noopener" data-service="Diseño web">Cotizar por WhatsApp →</a></article>
+          <article class="card"><div class="icon">✎</div><h3>Diseño gráfico</h3><p>Logotipos sencillos, publicidad y contenido visual.</p><div class="price">$80–$250 <small>MXN</small></div><a class="btn wa-link" href="#" target="_blank" rel="noopener" data-service="Diseño gráfico">Cotizar por WhatsApp →</a></article>
+          <article class="card"><div class="icon">▣</div><h3>Catálogos digitales</h3><p>Catálogos y menús digitales para presentar tus productos.</p><div class="price">$200–$350 <small>MXN</small></div><a class="btn wa-link" href="#" target="_blank" rel="noopener" data-service="Catálogos digitales">Cotizar por WhatsApp →</a></article>
+          <article class="card"><div class="icon">▤</div><h3>Documentos digitales</h3><p>Presentaciones, PDF, currículums y menús profesionales.</p><div class="price">$80–$300 <small>MXN</small></div><a class="btn wa-link" href="#" target="_blank" rel="noopener" data-service="Documentos digitales">Cotizar por WhatsApp →</a></article>
+          <article class="card"><div class="icon">▦</div><h3>Herramientas digitales</h3><p>Formularios, hojas de cálculo y organización de información.</p><div class="price">$100–$400 <small>MXN</small></div><a class="btn wa-link" href="#" target="_blank" rel="noopener" data-service="Herramientas digitales">Cotizar por WhatsApp →</a></article>
+          <article class="card"><div class="icon">◇</div><h3>Tiendas y catálogos online</h3><p>Una forma sencilla de mostrar productos y recibir consultas.</p><div class="price">Desde $300 <small>MXN</small></div><a class="btn wa-link" href="#" target="_blank" rel="noopener" data-service="Tiendas y catálogos online">Cotizar por WhatsApp →</a></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="portfolio" id="portafolio">
+      <div class="wrap">
+        <div class="section-head"><h2>Proyectos de muestra</h2><p>Ideas de lo que podemos crear para tu negocio.</p></div>
+        <div class="projects">
+          <article class="project"><div class="project-art art1">NEXORA WEB</div><div class="project-info"><h3>Página para negocio</h3><p>Ejemplo conceptual de una página de presentación moderna.</p></div></article>
+          <article class="project"><div class="project-art art2">MENÚ DIGITAL</div><div class="project-info"><h3>Catálogo y menú</h3><p>Ejemplo conceptual para mostrar productos, precios y servicios.</p></div></article>
+          <article class="project"><div class="project-art art3">CREATIVE</div><div class="project-info"><h3>Diseño visual</h3><p>Ejemplo conceptual de identidad y materiales promocionales.</p></div></article>
+        </div>
+        <p style="text-align:center;color:#9fa8ca;font-size:12px;margin-top:18px">Los proyectos mostrados son ejemplos de presentación, no trabajos realizados para clientes.</p>
+      </div>
+    </section>
+
+    <section class="login-section" id="login">
+      <div class="wrap">
+        <div class="section-head"><h2>Acceso a NEXORA</h2><p>Inicia sesión para acceder a tu espacio.</p></div>
+        <div class="login-card">
+          <h2>Bienvenido de nuevo</h2>
+          <p class="sub">Ingresa tus datos para continuar.</p>
+          <form id="loginForm" novalidate>
+            <div class="login-field"><label for="loginEmail">Correo electrónico</label><input id="loginEmail" name="email" type="email" placeholder="tunombre@correo.com" autocomplete="email" required></div>
+            <div class="login-field"><label for="loginPassword">Contraseña</label><div class="password-wrap"><input id="loginPassword" name="password" type="password" placeholder="Escribe tu contraseña" autocomplete="current-password" minlength="6" required><button class="show-pass" id="togglePassword" type="button">Mostrar</button></div></div>
+            <button class="btn login-submit" type="submit">Iniciar sesión →</button>
+            <div class="login-status" id="loginStatus" role="status" aria-live="polite"></div>
+            <button class="logout" id="logoutButton" type="button">Cerrar sesión</button>
+          </form>
+          <p class="login-note">Acceso de demostración: este formulario todavía no verifica cuentas reales ni protege información. Antes de usarlo con clientes, hay que conectarlo a un servicio seguro de autenticación.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="nosotros">
+      <div class="wrap about-grid">
+        <div><div class="eyebrow">Conoce NEXORA</div><h2 style="font-size:38px;margin:12px 0">Ideas claras. Soluciones digitales.</h2><p class="lead">Ayudamos a emprendedores y pequeños negocios a presentar sus ideas en internet con diseños funcionales y accesibles.</p></div>
+        <div class="about-box"><h3>¿Por qué trabajar con nosotros?</h3><div class="checks"><span>Atención directa y cercana</span><span>Diseños adaptados a cada proyecto</span><span>Precios claros desde el inicio</span><span>Comunicación durante el proceso</span></div><p>Cuéntanos qué necesitas y prepararemos una propuesta de acuerdo con tu proyecto.</p></div>
+      </div>
+    </section>
+
+    <section class="contact" id="contacto">
+      <div class="wrap contact-box">
+        <div><div class="eyebrow">Hablemos de tu idea</div><h2>¿Listo para empezar?</h2><p>Contáctanos por WhatsApp y solicita una cotización.</p><h2 style="margin-top:18px;letter-spacing:2px">466 108 83 53</h2></div>
+        <a class="btn whatsapp wa-link" href="#" target="_blank" rel="noopener">☏ Contactar por WhatsApp ↗</a>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="wrap foot"><span class="brand" style="font-size:20px"><span class="mark" style="width:34px;height:34px;font-size:21px">N</span>NEXORA</span><span>© 2026 NEXORA. Sitio de presentación.</span><span>Diseño y soluciones digitales · México</span></div></footer>
+
+  <script>
+    // Inicio de sesión de demostración (no sustituye autenticación con servidor).
+    const loginForm = document.getElementById("loginForm");
+    const loginEmail = document.getElementById("loginEmail");
+    const loginPassword = document.getElementById("loginPassword");
+    const loginStatus = document.getElementById("loginStatus");
+    const logoutButton = document.getElementById("logoutButton");
+    const togglePassword = document.getElementById("togglePassword");
+    function updateLoginState(){
+      const active = sessionStorage.getItem("nexora_demo_session") === "active";
+      loginStatus.classList.toggle("show", active);
+      logoutButton.classList.toggle("show", active);
+      if(active) loginStatus.textContent = "Sesión de demostración iniciada en este navegador. No se ha verificado una cuenta real.";
+    }
+    togglePassword.addEventListener("click", () => {
+      const reveal = loginPassword.type === "password";
+      loginPassword.type = reveal ? "text" : "password";
+      togglePassword.textContent = reveal ? "Ocultar" : "Mostrar";
+    });
+    loginForm.addEventListener("submit", event => {
+      event.preventDefault();
+      const email = loginEmail.value.trim();
+      const password = loginPassword.value;
+      if(!loginForm.reportValidity()) return;
+      if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
+        loginStatus.textContent = "Escribe un correo electrónico válido.";
+        loginStatus.classList.add("show");
+        return;
+      }
+      if(password.length < 6){
+        loginStatus.textContent = "La contraseña debe tener al menos 6 caracteres.";
+        loginStatus.classList.add("show");
+        return;
+      }
+      sessionStorage.setItem("nexora_demo_session", "active");
+      updateLoginState();
+    });
+    logoutButton.addEventListener("click", () => {
+      sessionStorage.removeItem("nexora_demo_session");
+      loginStatus.classList.remove("show");
+      logoutButton.classList.remove("show");
+      loginPassword.value = "";
+    });
+    updateLoginState();
+
+    // Número de México: código de país 52 + número de 10 dígitos.
+    const phone = "524661088353";
+    document.querySelectorAll(".wa-link").forEach(link => {
+      const service = link.dataset.service;
+      const message = service
+        ? `Hola, vi la página de NEXORA y me interesa cotizar el servicio de ${service}. ¿Me pueden dar más información?`
+        : "Hola, vi la página de NEXORA y me gustaría solicitar información sobre sus servicios.";
+      link.href = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+    });
+  </script>
+</body>
+</html>
